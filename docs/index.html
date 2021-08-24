@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="resources/stylesheet.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <body>
-        <nav>
-            <div>Home</div>
-            <div>Plots
-                <ul>
-                    <li>Cloudiness</li>
-                    <li>Humidity</li>
-                    <li>Wind</li>
-                    <li>Temperature</li>
-                    <li>World Maps</li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Latitude</a>
+            <div class = 'container-fluid'>
+                <ul class = "navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class = "nav-item">
+                        <a class= "nav-link active" aria-current="page" href = 'index.html'>Home</a>
+                    </li>
+                    <li class = "nav-item dropdown">
+                        <a class = "nav-link dropdown-toggle" href="#" id="navbarScrollingDrowpdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Plots
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href = "Cloudiness.html">Cloudiness</a></li>
+                            <li><a class="dropdown-item" href = 'Humidity.html'>Humidity</a></li>
+                            <li><a class="dropdown-item" href = 'Wind.html'>Wind</a></li>
+                            <li><a class="dropdown-item" href = 'Temperature.html'>Temperature</a></li>
+                            <li><a class="dropdown-item" href = 'WorldMap.html'>World Maps</a></li>
+                        </ul>
+                    </li>
+                    <li><a class= "nav-link active" aria-current="page" href = '/data.html'>Data</a></li>
                 </ul>
             </div>
-            <div>Data</div>
         </nav>
         <div>
             This page contains an investigation of how cloudiness, humidity, wind, and temperature vary with Latitude. The data was collected from OpenWeatherMapAPI across a single day in July. Weather was collected for over 1000 cities. 

@@ -8,6 +8,56 @@
     <title>World Map</title>
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-md navbar-light bg-light container">
+        <a class="navbar-brand" href="#">Latitude</a>
+        <div class = 'container-fluid'>
+            <ul class = "navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class = "nav-item">
+                    <a class= "nav-link active" href = 'index.html'>Home</a>
+                </li>
+                <li class = "nav-item dropdown">
+                    <a class = "nav-link dropdown-toggle" href="#" id="navbarScrollingDrowpdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Plots
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href = "cloudiness.html" >Cloudiness</a></li>
+                        <li><a class="dropdown-item" href = 'humidity.html' >Humidity</a></li>
+                        <li><a class="dropdown-item" href = 'wind.html' >Wind</a></li>
+                        <li><a class="dropdown-item" href = 'temperature.html' aria-current="page">Temperature</a></li>
+                        <li><a class="dropdown-item" href = 'WorldMap.html'>World Maps</a></li>
+                    </ul>
+                </li>
+                <li><a class= "nav-link active" href = 'data.html'>Data</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class='container clearfix'>
+        <h1>World Maps</h1>
+        <img src='visualizations/TemperatureWorld.png' class='img-fluid' id='temperature'>
+        <img src='visualizations/HumidityWorld.png' class='img-fluid' id='humidity' style='display:none'>
+        <img src='visualizations/CloudWorld.png' class='img-fluid' id='cloudiness' style='display:none'>
+        <img src='visualizations/WindWorld.png' class='img-fluid' id='windiness' style='display:none'>
+        <div class="list-group" style='flex-direction:row'>
+            <button type="button" class="list-group-item list-group-item-action" aria-current="true" onclick = "toggleImg('temperature')" id = 'temperaturebtn'>
+              Temperature
+            </button>
+            <button type="button" class="list-group-item list-group-item-action" onclick = "toggleImg('humidity')">Humidity</button>
+            <button type="button" class="list-group-item list-group-item-action" onclick = "toggleImg('cloudiness')">Cloudiness</button>
+            <button type="button" class="list-group-item list-group-item-action" onclick = "toggleImg('windiness')">Windiness</button>
+        </div>
+    </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script>
+    let imgs = ['temperature', 'humidity', 'cloudiness', 'windiness'];
+    function toggleImg(id) {
+        for (i = 0; i < imgs.length; i++) {
+            var x = document.getElementById(imgs[i])
+            x.style.display = "none";
+        }
+        var temp = document.getElementById(id);
+        temp.style.display = "block";
+
+    }
+</script>
 </html>
